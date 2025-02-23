@@ -22,3 +22,25 @@ function mudarCorFundo() {
         link.style.color = gerarCorAleatoria();
     });
 }
+
+function adicionarTarefa() {
+    const input = document.getElementById('tarefa-input');
+    const lista = document.getElementById('lista-tarefas');
+    
+    if (input.value.trim() !== '') {
+        const li = document.createElement('li');
+        li.textContent = input.value;
+        
+        const btnExcluir = document.createElement('button');
+        btnExcluir.textContent = 'X';
+        btnExcluir.className = 'botao-cor';
+        btnExcluir.style.marginLeft = '10px';
+        btnExcluir.onclick = function() {
+            lista.removeChild(li);
+        };
+        
+        li.appendChild(btnExcluir);
+        lista.appendChild(li);
+        input.value = '';
+    }
+}

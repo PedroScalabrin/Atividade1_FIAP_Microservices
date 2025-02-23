@@ -75,6 +75,60 @@ body {
     line-height: 1.6;
 }
 
+/* Estilos para a lista de tarefas */
+.todo-container {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#tarefa-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-tarefas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    border-left: 4px solid #333;
+}
+
+#lista-tarefas li button {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    width: 50px;
+    height: 50px;
+}
+
+#lista-tarefas li button:hover {
+    color: #ff0000;
+}
+
+#lista-tarefas li:hover {
+    background-color: #f0f0f0;
+}
+
+
 /* Estilos para a barra lateral */
 #barra-lateral {
     width: 250px;
