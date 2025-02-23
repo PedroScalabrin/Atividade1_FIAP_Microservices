@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ddd;
+}
+
+/* Estilos básicos para o cabeçalho */
+#header {
+    background-color: #333;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin-bottom: 20px;
+}
+
+#nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.menu-item {
+    padding: 0.5rem 0;
+}
+
+.menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #ddd;
+}
+
+/* Estilos para o conteúdo principal */
+#conteudo-principal {
+    max-width: 1200px;
+    margin: 90px auto 60px;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.secao-artigos {
+    flex: 1;
+}   
+
+.artigo {
+    margin-bottom: 2rem;
+}
+
+.titulo-artigo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.texto-artigo {
+    line-height: 1.6;
+}
+
+/* Estilos para a barra lateral */
+#barra-lateral {
+    width: 250px;
+    padding: 0.8rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}   
+
+.titulo-lateral {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}                   
+
+.texto-lateral {
+    line-height: 1.6;
+}
+
+/* Estilos para o rodapé */ 
+#rodape {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+}   
+
+.texto-rodape {
+    color: #fff;
+    font-size: 0.9rem;
+}   
