@@ -44,3 +44,28 @@ function adicionarTarefa() {
         input.value = '';
     }
 }
+
+async function carregarArtigos() {
+    try {
+        const response = await fetch('http://demo0193019.mockable.io/artigos');
+        const data = await response.json();
+        
+        const container = document.getElementById('artigos-container');
+        
+        data.artigos.forEach(artigo => {
+            const articleElement = document.createElement('article');
+            articleElement.className = 'artigo';
+            
+            articleElement.innerHTML = `
+                <h2 class="titulo-artigo">${artigo.titulo}</h2>
+                <p class="texto-artigo">${artigo.conteudo}</p>
+            `;
+            
+            container.appendChild(articleElement);
+        });
+    } catch (erro) {
+        console.error('Erro ao carregar artigos:', erro);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', carregarArtigos);
