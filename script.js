@@ -68,4 +68,41 @@ async function carregarArtigos() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', carregarArtigos);
+async function enviarFormulario(evento) {
+    evento.preventDefault();
+    
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const comentario = document.getElementById('comentario').value;
+    
+    const dados = {
+        nome: nome,
+        email: email,
+        comentario: comentario
+    };
+    
+    try {
+        const response = await fetch('http://demo0193019.mockable.io/contato', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dados)
+        });
+        
+        if (response.ok) {
+            alert('Mensagem enviada com sucesso!');
+            document.getElementById('formulario-contato').reset();
+        } else {
+            throw new Error('Erro ao enviar mensagem');
+        }
+    } catch (erro) {
+        alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+        console.error('Erro:', erro);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    carregarArtigos();
+    document.getElementById('formulario-contato').addEventListener('submit', enviarFormulario);
+});
