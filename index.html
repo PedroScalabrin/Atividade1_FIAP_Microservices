@@ -50,6 +50,28 @@
                 </div>
             </article>
             <div id="artigos-container"></div>
+            <div class="container">
+                <h2>Lista de Usuários</h2>
+                <div class="controles-filtro">
+                    <label for="idade-minima">Idade Mínima:</label>
+                    <input type="number" id="idade-minima" min="0" value="">
+                    <button onclick="aplicarFiltro()" class="botao-filtro">Filtrar</button>
+                    <button onclick="resetarFiltro()" class="botao-filtro">Mostrar Todos</button>
+                </div>
+                <table id="tabela-usuarios">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Idade</th>
+                            <th>Profissão</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela">
+                        <!-- Dados serão inseridos aqui -->
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <aside id="barra-lateral">

@@ -102,7 +102,67 @@ async function enviarFormulario(evento) {
     }
 }
 
+// Variável global para armazenar todos os usuários
+let todosUsuarios = [];
+
+async function carregarUsuarios() {
+    try {
+        const response = await fetch('http://demo0193019.mockable.io/usuarios');
+        const data = await response.json();
+        
+        // Armazena todos os usuários
+        todosUsuarios = data.usuarios;
+        
+        // Exibe os usuários na tabela
+        exibirUsuarios(todosUsuarios);
+    } catch (erro) {
+        console.error('Erro ao carregar usuários:', erro);
+        alert('Erro ao carregar dados dos usuários');
+    }
+}
+
+function exibirUsuarios(usuarios) {
+    const corpoTabela = document.getElementById('corpo-tabela');
+    corpoTabela.innerHTML = ''; // Limpa o conteúdo atual
+    
+    usuarios.forEach(usuario => {
+        const tr = document.createElement('tr');
+        
+        tr.innerHTML = `
+            <td>${usuario.nome}</td>
+            <td>${usuario.email}</td>
+            <td>${usuario.idade}</td>
+            <td>${usuario.profissao}</td>
+        `;
+        
+        corpoTabela.appendChild(tr);
+    });
+}
+
+function aplicarFiltro() {
+    const idadeMinima = parseInt(document.getElementById('idade-minima').value);
+    
+    if (isNaN(idadeMinima)) {
+        alert('Por favor, insira uma idade válida');
+        return;
+    }
+    
+    const usuariosFiltrados = todosUsuarios.filter(usuario => usuario.idade >= idadeMinima);
+    
+    if (usuariosFiltrados.length === 0) {
+        alert('Nenhum usuário encontrado com esse filtro');
+    }
+    
+    exibirUsuarios(usuariosFiltrados);
+}
+
+function resetarFiltro() {
+    document.getElementById('idade-minima').value = '';
+    exibirUsuarios(todosUsuarios);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     carregarArtigos();
     document.getElementById('formulario-contato').addEventListener('submit', enviarFormulario);
+    carregarUsuarios();
 });

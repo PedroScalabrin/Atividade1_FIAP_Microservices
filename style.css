@@ -212,3 +212,80 @@ textarea.form-input {
     min-height: 100px;
     resize: vertical;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f8f8f8;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.controles-filtro {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controles-filtro label {
+    font-weight: bold;
+}
+
+.controles-filtro input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100px;
+}
+
+.botao-filtro {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-filtro:hover {
+    background-color: #45a049;
+}
+
+.botao-filtro:last-child {
+    background-color: #666;
+}
+
+.botao-filtro:last-child:hover {
+    background-color: #555;
+}
